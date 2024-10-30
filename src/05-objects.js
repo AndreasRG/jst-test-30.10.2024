@@ -8,7 +8,14 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-
+    let arrayOfObjects = (
+        {
+            name: "John Doe",
+            age: 30,
+            city: "New York"
+        }
+);
+    return arrayOfObjects;
 }
 
 
@@ -23,7 +30,8 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    let nameOfPerson = person.name;
+    return nameOfPerson;
 }
 
 
@@ -40,7 +48,8 @@ function getPersonName(person) {
  *
  */
 function findPersonByName(persons, name) {
-
+    let findPerson = persons.find(person => person.name === name);
+    return findPerson
 }
 
 
@@ -55,7 +64,11 @@ function findPersonByName(persons, name) {
  * // totalAge will be 55
  */
 function getTotalAge(persons) {
-
+    let sumOfAge = 0;
+    for (i = 0; i < persons.length; i++) {
+        sumOfAge += persons[i].age;
+    }
+    return sumOfAge;
 }
 
 
@@ -74,5 +87,16 @@ function getTotalAge(persons) {
  * const hasDuplicates = checkForDuplicateEmails(users); // true
  */
 function checkForDuplicateEmails(users) {
-
+    let arrayOfEmails = [];
+    for (let i = 0; i < users.length; i++) {
+        arrayOfEmails.push(users[i].email);
+    }
+    let emailSet = new Set();
+    for (let email of arrayOfEmails) {
+        if (emailSet.has(email)) {
+            return true;
+        }
+        emailSet.add(email);
+    }
+    return false;
 }

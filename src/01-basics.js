@@ -8,7 +8,7 @@
  * console.log(coolestTeacher); // Benjamin
  */
 function getCoolestTeacher() {
-    
+    return 'Benjamin';
 }
 
 /**
@@ -24,7 +24,8 @@ function getCoolestTeacher() {
  * const anotherResult = multiplyAndAdd(-1, 1, 2); // anotherResult will be 1
  */
 function multiplyAndAdd(a, b, c) {
-
+    const result = a * b + c;
+    return result
 }
 
 /**
@@ -38,7 +39,8 @@ function multiplyAndAdd(a, b, c) {
  * const anotherResult = determineType(42); // anotherResult will be "number"
  */
 function determineType(value) {
-
+    const typeControl = typeof value;
+    return typeControl;
 }
 
 /**
@@ -53,7 +55,7 @@ function determineType(value) {
  */
 
 function concatenateStringsWithSpace(a, b) {
-
+    return `${a} ${b}`
 }
 
 
@@ -71,7 +73,13 @@ function concatenateStringsWithSpace(a, b) {
  */
 
 function toUpperCaseWithSmiley(str) {
-
+    if (str === 'hello' || str === 'world') {
+        let upperCaseText = str.toUpperCase();
+        return `${upperCaseText}:)`;
+    } else {
+        let upperCaseText = str.toUpperCase();
+        return `${upperCaseText}:)`;
+    }
 }
 
 /**
@@ -86,6 +94,16 @@ function toUpperCaseWithSmiley(str) {
  * const anotherRepeated = repeatString("Goodbye", 2); // anotherRepeated will be "Goodbye Goodbye"
  */
 function repeatString(str, times) {
-
+    let stringCoverted = `${str}`;
+    if (times == 1) {
+        stringCoverted = `${str}`;
+    } else if (times > 1)
+    for (i = 0; i < times - 1; i++) {
+        stringCoverted += ` ${str}`;
+        console.log(stringCoverted)
+    } else if (times == 0 || times < 0) {
+        return "";
+    }
+    return stringCoverted
 }
 

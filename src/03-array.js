@@ -14,7 +14,15 @@
  * console.log(numbers); // [5]
  */
 function returnNumbers(start, finish) {
-
+    const arrayOfNumbers = [];
+    for (i = 0; i <= finish - start; i++) {
+        if (arrayOfNumbers.length == 0) {
+            arrayOfNumbers.push(start);
+        } else if (finish - start >= 1) {
+            arrayOfNumbers.push(arrayOfNumbers[i-1]+1);
+        }
+    }
+    return arrayOfNumbers;
 }
 
 
@@ -30,7 +38,11 @@ function returnNumbers(start, finish) {
  */
 
 function sumArray(array) {
-
+    let sum = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum
 }
 
 /**
@@ -45,7 +57,8 @@ function sumArray(array) {
  * const updatedArray = pushElement(myArray, 4); // updatedArray will be [1, 2, 3, 4]
  */
 function pushElement(arr, elem) {
-
+    arr.push(elem);
+    return arr;
 }
 
 
@@ -61,5 +74,6 @@ function pushElement(arr, elem) {
  * const filtered = removeValue(numbers, 2); // filtered will be [1, 3, 4, 5]
  */
 function removeValue(array, valueToRemove) {
-
+    let filteredArray = array.filter(element => element !== valueToRemove);
+    return filteredArray;
 }
